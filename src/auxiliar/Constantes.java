@@ -1,6 +1,8 @@
 package auxiliar;
 
 public class Constantes {
+	
+	public final double TAXA_TRANSFERENCIA = 1.2;
 
 	public void Exibir() {
 		Exibir("", 1);

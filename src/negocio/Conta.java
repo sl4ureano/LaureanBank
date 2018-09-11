@@ -1,4 +1,5 @@
 package negocio;
+import auxiliar.*;
 
 public class Conta {
 
@@ -6,6 +7,7 @@ public class Conta {
 	private int numero;
 	private Agencia agencia;
 	private Pessoa titular;
+	Constantes contante = new Constantes();
 
 	public void Desposita(double valor) {
 		this.saldo += valor;
@@ -20,9 +22,9 @@ public class Conta {
 		}
 	}
 	
-	public boolean Transfere(double valor,Conta destino) {
-		if (this.saldo >= valor) {
-			this.saldo -= valor;
+	public boolean Transfere(double valor,Conta destino) {		
+		if (this.saldo >= valor) {			
+			this.saldo -= valor + contante.TAXA_TRANSFERENCIA;
 			destino.Desposita(valor);
 			return true;
 		}
@@ -31,11 +33,7 @@ public class Conta {
 	
 	public double getSaldo() {
 		return saldo;
-	}
-
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
-	}
+	}	
 
 	public int getNumero() {
 		return numero;

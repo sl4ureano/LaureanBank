@@ -5,11 +5,29 @@ import auxiliar.*;
 
 public class TestaAplicacao {
 	public static void main(String[] args) {
-         
+
+        ////////////////// Gerente //////////////////////
+		Endereco enderecoGerente = new Endereco();
+		enderecoGerente.setRua("Rua do Carmo");
+		enderecoGerente.setUf("RJ");
+		enderecoGerente.setCidade("Rio de Janeiro");
+		enderecoGerente.setBairro("Centro");
+		enderecoGerente.setNumero(985);
+		enderecoGerente.setComplemento("Apt 350");
+
+		Pessoa Marcio = new Pessoa();
+		Marcio.setNome("Marcio Silva");
+		Marcio.setCpf("265.065.737-40");
+		Marcio.setIdade(61);
+		Marcio.setEmail("gerente@bradesco.com");
+		Marcio.setEndereco(enderecoGerente);
+		
+
+		///////////////////// Primeiro Banco /////////////////////
 		Banco banco_bradesco = new Banco();
 		banco_bradesco.setNome("Bradesco");
-		banco_bradesco.setId(800);		
-		
+		banco_bradesco.setId(800);
+
 		///////////////////////// Constantes //////////////////////
 		Constantes constantes = new Constantes();
 		constantes.Exibir("Bank System 2.0", 1);
@@ -54,6 +72,7 @@ public class TestaAplicacao {
 		agenciaCentro.setNumero_agencia(6980);
 		agenciaCentro.setEndereco(enderecoAgenciaCentro);
 		agenciaCentro.setBanco(banco_bradesco);
+		agenciaCentro.setGerente(Marcio);
 		agenciaCentro.Exibir();
 		constantes.Exibir("l", 1);
 		constantes.Exibir("n", 6);
@@ -99,6 +118,7 @@ public class TestaAplicacao {
 		agenciaNiteroi.setNumero_agencia(8065);
 		agenciaNiteroi.setEndereco(enderecoAgenciaNiteroi);
 		agenciaNiteroi.setBanco(banco_bradesco);
+		agenciaNiteroi.setGerente(Marcio);
 		agenciaNiteroi.Exibir();
 		constantes.Exibir("l", 1);
 
@@ -107,8 +127,9 @@ public class TestaAplicacao {
 				: "Você não Possui fundos para essa transferência!");
 		constantes.Exibir("l", 1);
 		constantes.Exibir("n", 6);
-		
-		///////////////////////////// Exibindo Extrato da Primeira Conta Novamente///////////////////////////////
+
+		///////////////////////////// Exibindo Extrato da Primeira Conta
+		///////////////////////////// Novamente///////////////////////////////
 		constantes.Exibir("Bank System 2.0", 1);
 		constantes.Exibir("l", 1);
 		Adriano.Exibir();
@@ -117,7 +138,8 @@ public class TestaAplicacao {
 		constantes.Exibir("l", 1);
 		agenciaCentro.Exibir();
 		constantes.Exibir("l", 1);
-		constantes.Exibir("n", 6);		
+		constantes.Exibir("n", 6);
+		
 
 	}
 

@@ -5,6 +5,7 @@ public class Agencia {
 	private int numero_agencia;
 	private Endereco endereco;
 	private Banco banco;
+	private Pessoa gerente;
 
 	public int getNumero_agencia() {
 		return numero_agencia;
@@ -31,9 +32,19 @@ public class Agencia {
 		this.banco = banco;
 	}
 
+	
+	public Pessoa getGerente() {
+		return gerente;
+	}
+
+	public void setGerente(Pessoa gerente) {
+		this.gerente = gerente;
+	}
+
 	public void Exibir() {
 		banco.Exibir();
-		System.out.println("Agencia: "+getNumero_agencia());	
+		System.out.println("Agencia: "+getNumero_agencia());
+		System.out.println("Gerente: "+gerente.getNome());
 		 endereco.Exibir();
 	}
 
