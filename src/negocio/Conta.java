@@ -7,7 +7,7 @@ public class Conta {
 	private int numero;
 	private Agencia agencia;
 	private Pessoa titular;
-	Constantes contante = new Constantes();
+	
 
 	public void Desposita(double valor) {
 		this.saldo += valor;
@@ -24,7 +24,7 @@ public class Conta {
 	
 	public boolean Transfere(double valor,Conta destino) {		
 		if (this.saldo >= valor) {			
-			this.saldo -= valor + contante.TAXA_TRANSFERENCIA;
+			this.saldo -= valor + Constantes.TAXA_TRANSFERENCIA;
 			destino.Desposita(valor);
 			return true;
 		}
@@ -60,6 +60,6 @@ public class Conta {
 	}
 
 	public void Exibir() {
-		System.out.println("Número da Conta: " + getNumero() + "\nSaldo: R$ " + getSaldo());
+		System.out.println("NÃºmero da Conta: " + getNumero() + "\nSaldo: R$ " + getSaldo());
 	}
 }
