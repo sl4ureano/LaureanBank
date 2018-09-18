@@ -8,7 +8,7 @@ public class Constantes {
 		Exibir("", 1);
 	}
 
-	public void Exibir(String texto, int quantidade) {
+	public static void Exibir(String texto, int quantidade) {
 		if (texto.equals("n")) {
 			for (int i = 0; i < quantidade; i++) {
 				System.out.printf("\n");
