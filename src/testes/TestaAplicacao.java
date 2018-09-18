@@ -6,9 +6,8 @@ import auxiliar.*;
 public class TestaAplicacao {
 	public static void main(String[] args) {
 
-		///////////////////////// Constantes //////////////////////
-		Constantes constantes = new Constantes();
-		constantes.Exibir("Bank System 2.0", 1);
+		///////////////////////// Constantes //////////////////////		
+		Constantes.Exibir("Bank System 2.0", 1);
 
 		///////////////////////// Primeira Pessoa//////////////////////
 		Endereco enderecoAdriano = new Endereco();
@@ -26,9 +25,9 @@ public class TestaAplicacao {
 		Adriano.setEmail("sl4ureano@outlook.com");
 		Adriano.setContatos(new String[]{"(21)3868-4518", "(21)3697-0419"});
 		Adriano.setEndereco(enderecoAdriano);
-		constantes.Exibir("l", 1);
+		Constantes.Exibir("l", 1);
 		Adriano.Exibir();
-		constantes.Exibir("l", 1);
+		Constantes.Exibir("l", 1);
 
 		////////////////// Primeiro Gerente //////////////////////
 		Endereco enderecoGerente = new Endereco();
@@ -63,7 +62,7 @@ public class TestaAplicacao {
 		enderecoAgenciaCentro.setCidade("Rio de Janeiro");
 		enderecoAgenciaCentro.setBairro("Centro");
 		enderecoAgenciaCentro.setNumero(1800);
-		enderecoAgenciaCentro.setComplemento("Proximo a Estação da Urugaiana");
+		enderecoAgenciaCentro.setComplemento("Proximo a EstaÃ§Ã£o da Urugaiana");
 
 		Agencia agenciaCentro = new Agencia();
 		agenciaCentro.setNumero_agencia(6980);
@@ -71,7 +70,7 @@ public class TestaAplicacao {
 		agenciaCentro.setBanco(banco_bradesco);
 		agenciaCentro.setGerente(Marcio);
 		agenciaCentro.Exibir();
-		constantes.Exibir("l", 1);
+		Constantes.Exibir("l", 1);
 
 		///////////////////////// Primeira Conta//////////////////////
 		Conta contaAdriano = new Conta();
@@ -79,8 +78,8 @@ public class TestaAplicacao {
 		contaAdriano.Desposita(500);
 		contaAdriano.Saca(20);
 		contaAdriano.Exibir();
-		constantes.Exibir("l", 1);
-		constantes.Exibir("n", 6);
+		Constantes.Exibir("l", 1);
+		Constantes.Exibir("n", 6);
 
 		///////////////////////// Segunda Pessoa//////////////////////
 		Endereco enderecoJOAO = new Endereco();
@@ -92,16 +91,16 @@ public class TestaAplicacao {
 		enderecoJOAO.setComplemento("Apt 999");
 
 		Pessoa Joao = new Pessoa();
-		Joao.setNome("João Fernandez");
+		Joao.setNome("JoÃ£o Fernandez");
 		Joao.setCpf("885.085.938-80");
 		Joao.setIdade(63);
 		Joao.setEmail("joao@gmail.com");
 		Joao.setContatos(new String[]{"(21)9868-5875", "(21)3698-5898"});
 		Joao.setEndereco(enderecoJOAO);
-		constantes.Exibir("Bank System 2.0", 1);
-		constantes.Exibir("l", 1);
+		Constantes.Exibir("Bank System 2.0", 1);
+		Constantes.Exibir("l", 1);
 		Joao.Exibir();
-		constantes.Exibir("l", 1);
+		Constantes.Exibir("l", 1);
 
 		///////////////////////// Segunda Agencia //////////////////////
 		Endereco enderecoAgenciaNiteroi = new Endereco();
@@ -110,7 +109,7 @@ public class TestaAplicacao {
 		enderecoAgenciaNiteroi.setCidade("Rio de Janeiro");
 		enderecoAgenciaNiteroi.setBairro("Centro");
 		enderecoAgenciaNiteroi.setNumero(1800);
-		enderecoAgenciaNiteroi.setComplemento("Proximo a Estação da Urugaiana");
+		enderecoAgenciaNiteroi.setComplemento("Proximo a EstaÃ§Ã£o da Urugaiana");
 
 		Agencia agenciaNiteroi = new Agencia();
 		agenciaNiteroi.setNumero_agencia(8065);
@@ -118,7 +117,7 @@ public class TestaAplicacao {
 		agenciaNiteroi.setBanco(banco_laurean);
 		agenciaNiteroi.setGerente(Marcio);
 		agenciaNiteroi.Exibir();
-		constantes.Exibir("l", 1);
+		Constantes.Exibir("l", 1);
 
 		///////////////////////// Segunda Conta//////////////////////
 		Conta contaJoao = new Conta();
@@ -126,35 +125,35 @@ public class TestaAplicacao {
 		contaJoao.Desposita(2000);
 		contaJoao.Saca(600);
 		contaJoao.Exibir();
-		constantes.Exibir("l", 1);
+		Constantes.Exibir("l", 1);
 
 		///////////////////////////// Transferencia///////////////////////////////
 		System.out.println(contaJoao.Transfere(800, contaAdriano) ? "Transferencia Efetuada com Sucesso!"
-				: "Você não Possui fundos para essa transferência!");
-		constantes.Exibir("l", 1);
-		constantes.Exibir("n", 6);
+				: "VocÃª nÃ£o Possui fundos para essa transferÃªncia!");
+		Constantes.Exibir("l", 1);
+		Constantes.Exibir("n", 6);
 
 		///////////////////////////// Extrato da Primeira Conta Novamente///////
-		constantes.Exibir("Bank System 2.0", 1);
-		constantes.Exibir("l", 1);
+		Constantes.Exibir("Bank System 2.0", 1);
+		Constantes.Exibir("l", 1);
 		Adriano.Exibir();
-		constantes.Exibir("l", 1);
+		Constantes.Exibir("l", 1);
 		agenciaCentro.Exibir();
-		constantes.Exibir("l", 1);
+		Constantes.Exibir("l", 1);
 		contaAdriano.Exibir();
-		constantes.Exibir("l", 1);
-		constantes.Exibir("n", 6);
+		Constantes.Exibir("l", 1);
+		Constantes.Exibir("n", 6);
 
 		///////////////////////////// Extrato da Segunda Conta Novamente///////
-		constantes.Exibir("Bank System 2.0", 1);
-		constantes.Exibir("l", 1);
+		Constantes.Exibir("Bank System 2.0", 1);
+		Constantes.Exibir("l", 1);
 		Joao.Exibir();
-		constantes.Exibir("l", 1);
+		Constantes.Exibir("l", 1);
 		agenciaNiteroi.Exibir();
-		constantes.Exibir("l", 1);
+		Constantes.Exibir("l", 1);
 		contaJoao.Exibir();
-		constantes.Exibir("l", 1);
-		constantes.Exibir("n", 6);
+		Constantes.Exibir("l", 1);
+		Constantes.Exibir("n", 6);
 
 	}
 
