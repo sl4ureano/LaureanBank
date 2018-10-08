@@ -1,22 +1,28 @@
 package negocio;
 
+import auxiliar.Constantes;
+
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Iterator;
 
-public class Pessoa {
+public class Pessoa implements  Interface{
 	private String nome;
 	private String cpf;
 	private int idade;
 	private String email;
-	private String[] contatos;
+	private ArrayList<String> contatos = new ArrayList<String>();
 	private Endereco endereco;
-	
 
-	public String[] getContatos() {
-		return contatos;
+	public void inserirContatos (String contato){
+		contatos.add(contato);
 	}
 
-	public void setContatos(String[] contatos) {
-		this.contatos = contatos;
+	public void listarContatos(){
+		for (String contato:contatos){
+			System.out.println(contato);
+		}
+
 	}
 
 	public String getNome() {
@@ -60,10 +66,12 @@ public class Pessoa {
 	}
 
 	public void Exibir() {
+		Constantes.Exibir("l", 1);
 		System.out.println(
 				"Nome: " + getNome() + "\nCPF: " + getCpf() + "\nIdade: " + getIdade() + "\nEmail: " + getEmail()+ "\nTelefones: ");
-		for (String contato : getContatos()) {System.out.println("           " +contato);}		
+		listarContatos();
 		endereco.Exibir();
+		Constantes.Exibir("l", 1);
 		
 	}
 

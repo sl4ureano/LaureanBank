@@ -1,6 +1,6 @@
 package negocio;
 
-public class Banco {
+public class Banco implements  Interface {
 	private String nome;
 	private int id;
 	

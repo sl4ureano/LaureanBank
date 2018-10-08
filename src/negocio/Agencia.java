@@ -1,6 +1,8 @@
 package negocio;
 
-public class Agencia {
+import auxiliar.Constantes;
+
+public class Agencia implements  Interface{
 
 	private int numero_agencia;
 	private Endereco endereco;
@@ -46,6 +48,7 @@ public class Agencia {
 		System.out.println("Agencia: "+getNumero_agencia());
 		System.out.println("Gerente: "+gerente.getNome());
 		 endereco.Exibir();
+		Constantes.Exibir("l", 1);
 	}
 
 }

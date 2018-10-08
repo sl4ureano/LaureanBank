@@ -2,11 +2,13 @@ package testes;
 
 import negocio.*;
 import auxiliar.*;
+import java.util.ArrayList;
 
 public class TestaAplicacao {
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 
-		///////////////////////// Constantes //////////////////////		
+
+		///////////////////////// Constantes //////////////////////
 		Constantes.Exibir("Bank System 2.0", 1);
 
 		///////////////////////// Primeira Pessoa//////////////////////
@@ -23,11 +25,13 @@ public class TestaAplicacao {
 		Adriano.setCpf("255.055.838-40");
 		Adriano.setIdade(21);
 		Adriano.setEmail("sl4ureano@outlook.com");
-		Adriano.setContatos(new String[]{"(21)3868-4518", "(21)3697-0419"});
+		Adriano.inserirContatos("(21)3868-4518");
+		Adriano.inserirContatos("(21)3697-0419");
+		Adriano.inserirContatos("(21)3868-4518");
+		Adriano.inserirContatos("(21)3697-0419");
 		Adriano.setEndereco(enderecoAdriano);
-		Constantes.Exibir("l", 1);
 		Adriano.Exibir();
-		Constantes.Exibir("l", 1);
+
 
 		////////////////// Primeiro Gerente //////////////////////
 		Endereco enderecoGerente = new Endereco();
@@ -70,90 +74,62 @@ public class TestaAplicacao {
 		agenciaCentro.setBanco(banco_bradesco);
 		agenciaCentro.setGerente(Marcio);
 		agenciaCentro.Exibir();
-		Constantes.Exibir("l", 1);
 
-		///////////////////////// Primeira Conta//////////////////////
-		Conta contaAdriano = new Conta();
-		contaAdriano.setNumero(36410);
-		contaAdriano.Desposita(500);
-		contaAdriano.Saca(20);
-		contaAdriano.Exibir();
-		Constantes.Exibir("l", 1);
-		Constantes.Exibir("n", 6);
+        Conta contaCorrenteAdriano = new ContaCorrente(agenciaCentro,36410,Adriano);
+        contaCorrenteAdriano.imprimirTipo();
+        contaCorrenteAdriano.deposita(200);
+        contaCorrenteAdriano.Exibir();
 
-		///////////////////////// Segunda Pessoa//////////////////////
-		Endereco enderecoJOAO = new Endereco();
-		enderecoJOAO.setRua("Rua das Paineiras");
-		enderecoJOAO.setUf("RJ");
-		enderecoJOAO.setCidade("Rio de Janeiro");
-		enderecoJOAO.setBairro("Centro");
-		enderecoJOAO.setNumero(658);
-		enderecoJOAO.setComplemento("Apt 999");
 
-		Pessoa Joao = new Pessoa();
-		Joao.setNome("João Fernandez");
-		Joao.setCpf("885.085.938-80");
-		Joao.setIdade(63);
-		Joao.setEmail("joao@gmail.com");
-		Joao.setContatos(new String[]{"(21)9868-5875", "(21)3698-5898"});
-		Joao.setEndereco(enderecoJOAO);
-		Constantes.Exibir("Bank System 2.0", 1);
-		Constantes.Exibir("l", 1);
-		Joao.Exibir();
-		Constantes.Exibir("l", 1);
+        ///////////////////////// Segunda Pessoa//////////////////////
+        Endereco enderecoJOAO = new Endereco();
+        enderecoJOAO.setRua("Rua das Paineiras");
+        enderecoJOAO.setUf("RJ");
+        enderecoJOAO.setCidade("Rio de Janeiro");
+        enderecoJOAO.setBairro("Centro");
+        enderecoJOAO.setNumero(658);
+        enderecoJOAO.setComplemento("Apt 999");
 
-		///////////////////////// Segunda Agencia //////////////////////
-		Endereco enderecoAgenciaNiteroi = new Endereco();
-		enderecoAgenciaNiteroi.setRua("AV Presidente Vargas");
-		enderecoAgenciaNiteroi.setUf("RJ");
-		enderecoAgenciaNiteroi.setCidade("Rio de Janeiro");
-		enderecoAgenciaNiteroi.setBairro("Centro");
-		enderecoAgenciaNiteroi.setNumero(1800);
-		enderecoAgenciaNiteroi.setComplemento("Proximo a Estação da Urugaiana");
+        Pessoa Joao = new Pessoa();
+        Joao.setNome("João Fernandez");
+        Joao.setCpf("885.085.938-80");
+        Joao.setIdade(63);
+        Joao.setEmail("joao@gmail.com");
+        Joao.inserirContatos("(21)9868-5875");
+        Joao.inserirContatos("(21)3698-5898");
+        Joao.setEndereco(enderecoJOAO);
+        Constantes.Exibir("Bank System 2.0", 1);
+        Joao.Exibir();
 
-		Agencia agenciaNiteroi = new Agencia();
-		agenciaNiteroi.setNumero_agencia(8065);
-		agenciaNiteroi.setEndereco(enderecoAgenciaNiteroi);
-		agenciaNiteroi.setBanco(banco_laurean);
-		agenciaNiteroi.setGerente(Marcio);
-		agenciaNiteroi.Exibir();
-		Constantes.Exibir("l", 1);
 
-		///////////////////////// Segunda Conta//////////////////////
-		Conta contaJoao = new Conta();
-		contaJoao.setNumero(69685);
-		contaJoao.Desposita(2000);
-		contaJoao.Saca(600);
-		contaJoao.Exibir();
-		Constantes.Exibir("l", 1);
+        ///////////////////////// Segunda Agencia //////////////////////
+        Endereco enderecoAgenciaNiteroi = new Endereco();
+        enderecoAgenciaNiteroi.setRua("AV Presidente Vargas");
+        enderecoAgenciaNiteroi.setUf("RJ");
+        enderecoAgenciaNiteroi.setCidade("Rio de Janeiro");
+        enderecoAgenciaNiteroi.setBairro("Centro");
+        enderecoAgenciaNiteroi.setNumero(1800);
+        enderecoAgenciaNiteroi.setComplemento("Proximo a Estação da Urugaiana");
 
-		///////////////////////////// Transferencia///////////////////////////////
-		System.out.println(contaJoao.Transfere(800, contaAdriano) ? "Transferencia Efetuada com Sucesso!"
-				: "Você não Possui fundos para essa transferência!");
-		Constantes.Exibir("l", 1);
-		Constantes.Exibir("n", 6);
+        Agencia agenciaNiteroi = new Agencia();
+        agenciaNiteroi.setNumero_agencia(8065);
+        agenciaNiteroi.setEndereco(enderecoAgenciaNiteroi);
+        agenciaNiteroi.setBanco(banco_laurean);
+        agenciaNiteroi.setGerente(Marcio);
+        agenciaNiteroi.Exibir();
 
-		///////////////////////////// Extrato da Primeira Conta Novamente///////
-		Constantes.Exibir("Bank System 2.0", 1);
-		Constantes.Exibir("l", 1);
-		Adriano.Exibir();
-		Constantes.Exibir("l", 1);
-		agenciaCentro.Exibir();
-		Constantes.Exibir("l", 1);
-		contaAdriano.Exibir();
-		Constantes.Exibir("l", 1);
-		Constantes.Exibir("n", 6);
 
-		///////////////////////////// Extrato da Segunda Conta Novamente///////
-		Constantes.Exibir("Bank System 2.0", 1);
-		Constantes.Exibir("l", 1);
-		Joao.Exibir();
-		Constantes.Exibir("l", 1);
-		agenciaNiteroi.Exibir();
-		Constantes.Exibir("l", 1);
-		contaJoao.Exibir();
-		Constantes.Exibir("l", 1);
-		Constantes.Exibir("n", 6);
+        Conta contaCorrenteJoao = new ContaCorrente(agenciaNiteroi,24442,Joao);
+        contaCorrenteJoao.deposita(300);
+        //contaCorrenteJoao.transfere(100,contaCorrenteAdriano);
+        System.out.println(contaCorrenteJoao.transfere(100, contaCorrenteAdriano) ? "Transferencia Efetuada com Sucesso!"
+                : "Você não Possui fundos para essa transferência!");
+        Constantes.Exibir("l", 1);
+		contaCorrenteJoao.imprimirTipo();
+        contaCorrenteJoao.Exibir();
+
+
+
 
 	}
 

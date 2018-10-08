@@ -1,6 +1,6 @@
 package negocio;
 
-public class Endereco {
+public class Endereco implements  Interface{
 
 	private String uf;
 	private String cidade;
@@ -58,7 +58,7 @@ public class Endereco {
 	}
 	
 	public void Exibir() {
-		System.out.println("Endereço: "+getRua()+" - "+getNumero()+ " - "+getComplemento()+" - "+getBairro()+" - "+getCidade()+" - "+getUf());		
+		System.out.println("Endere?o: "+getRua()+" - "+getNumero()+ " - "+getComplemento()+" - "+getBairro()+" - "+getCidade()+" - "+getUf());		
 	}
 
 }
